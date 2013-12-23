@@ -1,0 +1,10 @@
+title:        @tmm1
+tagline:      "computer talk"
+url:          http://tmm1.net
+author:
+  name:       "Aman Gupta"
+  email:      "aman@tmm1.net"
+markdown:     rdiscount
+permalink:    pretty
+pygments:     true
+paginate:     5
