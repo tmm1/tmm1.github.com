@@ -11,10 +11,11 @@ In the past I've used ruby-prof's `RubyProf::Measure::ProcessTime.measure` to me
 
 ``` ruby
 def time
-  real, cpu = Time.now, Process.clock_gettime(Process::CLOCK_PROCESS_CPUTIME_ID)
+  real = Time.now
+  cpu  = Process.clock_gettime(Process::CLOCK_PROCESS_CPUTIME_ID)
   yield
-  real = Time.now-real
-  cpu = Process.clock_gettime(Process::CLOCK_PROCESS_CPUTIME_ID) - cpu
+  real = Time.now - real
+  cpu  = Process.clock_gettime(Process::CLOCK_PROCESS_CPUTIME_ID) - cpu
   { real: real, cpu: cpu, idle: real-cpu }
 end
 ```
