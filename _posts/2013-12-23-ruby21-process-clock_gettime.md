@@ -3,9 +3,9 @@ layout: post
 title: "Ruby 2.1: Process.clock_gettime()"
 ---
 
-Cpu vs idle time is one of the first things I always look at when profiling rails requests.
+Cpu vs idle time is one of the first things I look at when profiling rails requests.
 
-Cpu time consists of number crunching, template rendering, method invocation and any other time spent executing instructions on the CPU. Idle time is everything else- generally this is time spent waiting on disk or network I/O, and can be highly variable depending on network conditions, remote server load and other factors.
+Cpu time consists of number crunching, template rendering, method invocation and any other time spent executing instructions on the CPU. Idle time is everything else- generally this is time spent waiting on disk or network I/O, and can be highly variable depending on disk activity, remote server load, network conditions, etc.
 
 In the past I've used ruby-prof's `RubyProf::Measure::ProcessTime.measure` to measure cpu time, but with Ruby 2.1 we have a `clock_gettime(3)` wrapper built-in!
 
