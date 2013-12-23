@@ -1,10 +1,10 @@
-title:        @tmm1
+title:        "@tmm1"
 tagline:      "computer talk"
 url:          http://tmm1.net
 author:
   name:       "Aman Gupta"
   email:      "aman@tmm1.net"
 markdown:     rdiscount
-permalink:    pretty
+permalink:    /:title
 pygments:     true
 paginate:     5
