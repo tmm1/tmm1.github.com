@@ -4,7 +4,7 @@ url:          http://tmm1.net
 author:
   name:       "Aman Gupta"
   email:      "aman@tmm1.net"
-markdown:     rdiscount
+markdown:     redcarpet
 permalink:    /:title
 pygments:     true
 paginate:     5
