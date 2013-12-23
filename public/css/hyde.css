@@ -197,6 +197,12 @@ a:hover {
   margin-top: 0;
   font-family: "Abril Fatface";
 }
+.masthead h1 a {
+  font-weight: normal;
+}
+.masthead h1 a:hover {
+  text-decoration: none;
+}
 .masthead .lead {
   margin-bottom: 0;
 }
