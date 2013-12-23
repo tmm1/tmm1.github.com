@@ -14,8 +14,8 @@ def time
   real = Time.now
   cpu  = Process.clock_gettime(Process::CLOCK_PROCESS_CPUTIME_ID)
   yield
-  real = Time.now - real
   cpu  = Process.clock_gettime(Process::CLOCK_PROCESS_CPUTIME_ID) - cpu
+  real = Time.now - real
   { real: real, cpu: cpu, idle: real-cpu }
 end
 ```
