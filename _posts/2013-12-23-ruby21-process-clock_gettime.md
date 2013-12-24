@@ -3,7 +3,7 @@ layout: post
 title: "Ruby 2.1: Process.clock_gettime()"
 ---
 
-Cpu vs idle time is one of the first things I look at when profiling rails requests.
+Cpu vs idle time is one of the first things I look at when benchmarking rails requests.
 
 Cpu time consists of number crunching, template rendering, method invocation and any other time spent executing instructions on the CPU. Idle time is everything else- generally this is time spent waiting on disk or network I/O, and can be highly variable depending on disk activity, remote server load, network conditions, etc.
 
