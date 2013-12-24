@@ -141,3 +141,9 @@
   .highlight .gc {
     color: #999;
     background-color: #EAF2F5; }
+
+.highlight pre {
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
+}
