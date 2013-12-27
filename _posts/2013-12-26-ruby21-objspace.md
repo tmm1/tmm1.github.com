@@ -45,6 +45,8 @@ ObjectSpace.allocation_class_path(o) #=> "MyApp"
 ObjectSpace.allocation_method_id(o)  #=> :perform
 ```
 
+A block version of the tracer is [also available](http://ruby-doc.org/stdlib-2.1.0/libdoc/objspace/rdoc/ObjectSpace.html#method-c-trace_object_allocations).
+
 Under the hood, this feature is built on `NEWOBJ` and `FREEOBJ` tracepoints included in 2.1. These events are only available from C, via `rb_tracepoint_new()`.
 
 ### Heap Dumping
@@ -87,7 +89,9 @@ Objects are serialized as simple json, and include all relevant details about th
 }
 ```
 
-The heap dump produced by `ObjectSpace.dump_all` can be processed by the tool of your choice. You might try a [json tool like jq](http://stedolan.github.io/jq/) or a [json database](http://www.rethinkdb.com/), but a simple ruby/shell script will also suffice:
+The heap dump produced by `ObjectSpace.dump_all` can be processed by the tool of your choice. You might try a [json processor like jq](http://stedolan.github.io/jq/) or a [json database](http://www.rethinkdb.com/). Since the dump contains outbound references for each object, a full object graph can be re-created for deep analysis.
+
+For example, here's a simple ruby/shell script to see which gems/libraries create the most long-lived objects of different types:
 
 ``` console
 $ cat heap.json |
