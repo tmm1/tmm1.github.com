@@ -5,7 +5,7 @@ title: "Ruby 2.1: objspace.so"
 
 ObjectSpace in ruby contains many useful heap debugging utilities.
 
-Since 1.9, ruby has also shipped with `objspace.so`, which ads even more methods to the ObjectSpace module:
+Since 1.9 ruby has included `objspace.so` which adds even more methods to the ObjectSpace module:
 
 ``` ruby
 ObjectSpace.each_object{ |o| ... }
