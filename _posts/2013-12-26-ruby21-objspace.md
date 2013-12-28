@@ -107,4 +107,4 @@ $ cat heap.json |
 47096 lib/active_support/dependencies.rb:184:STRING
 ```
 
-If you have a ruby application that feels large or bloated, give these new ObjectSpace features a try. And if you end up writing a heap analysis tool or [visualization](http://arborjs.org) for these json files, do let me know [on twitter](https://twitter.com/tmm1).
+If you have a ruby application that feels large or bloated, give these new ObjectSpace features a try. And if you end up writing a heap analysis tool [or visualization](http://arborjs.org) for these json files, do let me know [on twitter](https://twitter.com/tmm1).
