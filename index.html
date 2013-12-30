@@ -4,6 +4,7 @@ layout: default
 
 <div class="posts">
   {% for post in paginator.posts %}
+  {% unless post.draft %}
   <div class="post">
     <h1>
       <a href="{{ post.url }}">
@@ -15,6 +16,7 @@ layout: default
 
     {{ post.content }}
   </div>
+  {% endunless %}
   {% endfor %}
 </div>
 
