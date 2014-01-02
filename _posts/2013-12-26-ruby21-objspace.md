@@ -16,7 +16,7 @@ ObjectSpace.memsize_of(o) #=> 0 /* additional bytes allocated by object */
 ObjectSpace.count_tdata_objects #=> {Encoding=>100, Time=>87, RubyVM::Env=>17, ...}
 ObjectSpace.count_nodes #=> {:NODE_SCOPE=>2, :NODE_BLOCK=>688, :NODE_IF=>9, ...}
 ObjectSpace.reachable_objects_from(o) #=> [referenced, objects, ...]
-ObjectSpace.reachable_objects_from_root #=> {"symbols"=>..., "global_tbl"=>...}
+ObjectSpace.reachable_objects_from_root #=> {"symbols"=>..., "global_tbl"=>...} /* in 2.1 */
 ```
 
 In 2.1, we've added a two big new features: an allocation tracer and a heap dumper.
@@ -64,7 +64,7 @@ ObjectSpace.dump("abc".freeze) #=> "{...}"
 
 # dump out all live objects to a json file
 GC.start
-ObjectSpace.dump_all(output: File.open('heap.json','w')))
+ObjectSpace.dump_all(output: File.open('heap.json','w'))
 ```
 
 Objects are serialized as simple json, and include all relevant details about the object, its source (if allocating tracing was enabled), and outbound references:
