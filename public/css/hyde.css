@@ -225,7 +225,7 @@ a:hover {
 -------------------------------------------------- */
 
 /* Wrapper for all posts on homepage */
-.posts {
+.container {
   margin-left:  20px;
   margin-right: 20px;
 }
@@ -308,7 +308,7 @@ a:hover {
   .masthead-inner {
     padding: 40px;
   }
-  .posts {
+  .container {
     margin-left: 40px;
     margin-right: 40px;
   }
