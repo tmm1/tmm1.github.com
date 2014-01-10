@@ -242,7 +242,7 @@ a:hover {
 }
 
 /* Related posts */
-.related {
+.related, .featured {
   padding-top: 40px;
   border-top: 1px solid #eee;
 }
@@ -258,7 +258,13 @@ a:hover {
   text-decoration: none;
 }
 .related-posts li a:hover small {
-  color: #000;
+  color: #555;
+}
+.featured .tagline {
+  display: block;
+  margin-left: 1em;
+  font-size: 75%;
+  color: #999;
 }
 
 

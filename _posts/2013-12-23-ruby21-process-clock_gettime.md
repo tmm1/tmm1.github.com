@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Ruby 2.1: Process.clock_gettime()"
+tagline: 'measure time spent on the cpu vs time waiting on i/o'
 ---
 
 Cpu vs idle time is one of the first things I look at when benchmarking rails requests.

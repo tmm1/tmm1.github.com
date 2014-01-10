@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Ruby 2.1: Profiling Ruby"
+tagline: "faster ruby code and rails apps with stackprof"
 ---
 
 Ruby 2.1 is shipping with `rb_profile_frames()`, a new C-api for fetching ruby backtraces. The api performs no allocations and adds minimal cpu overhead making it ideal for profiling, even in production environments.

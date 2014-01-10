@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Ruby 2.1: Process.setproctitle()"
+tagline: 'improve visibility with customized proclines, now easier than ever'
 tags: [ruby21, yearoftheprocline]
 ---
 

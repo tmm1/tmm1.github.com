@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Ruby 2.1: Frozen String Literals"
+tagline: '30% fewer long-lived strings + "".freeze optimization'
 ---
 
 In Ruby 2.1, `"str".freeze` is optimized by the compiler to return a single shared frozen strings on every invocation. An alternative `"str"f` syntax was implemented initially, but later reverted.

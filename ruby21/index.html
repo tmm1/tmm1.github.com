@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<div class="featured">
+  <h2>What's new in Ruby 2.1?</h2>
+
+  <ul class="related-posts">
+    {% for post in site.posts %}
+    {% if post.draft != false and post.title contains 'Ruby 2.1' %}
+      <li>
+        <h3>
+          <a href="{{ post.url }}">
+            {{ post.title }}
+            <small>{{ post.date | date_to_string }}</small>
+            <small class="tagline">
+              {{ post.tagline }}
+            </small>
+          </a>
+        </h3>
+      </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+
+<div>&nbsp;</div>

@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Ruby 2.1: Method Cache"
+tagline: 'hierarchical invalidation, better visibility and new probes'
 ---
 
 For years, MRI cleared the entire VM's method cache whenever a new method was defined. In fact, method defintions were only one of [a dozen ways to clear the method cache](https://charlie.bz/blog/things-that-clear-rubys-method-cache). Earlier this year, @jamesgolick decided to improve things with a [patchset for 1.9 implementing hierarchical invalidation](http://jamesgolick.com/2013/4/14/mris-method-caches.html). @charliesome subsequently [ported and committed the patchset](http://bugs.ruby-lang.org/issues/8426) to trunk. Starting with Ruby 2.1, altering a class will only invalidate the caches for that class and its subclasses.

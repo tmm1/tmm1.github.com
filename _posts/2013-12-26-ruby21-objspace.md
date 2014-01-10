@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Ruby 2.1: objspace.so"
+tagline: "easier debugging with an allocation tracer and heap dumper"
 ---
 
 ObjectSpace in ruby contains many useful heap debugging utilities.
