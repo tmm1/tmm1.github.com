@@ -20,10 +20,10 @@ $ ps ax | grep unicorn
 2640  unicorn github.com[9013677] worker[03]:  1632 reqs,  3.2 req/s,   19ms avg,   6.2% util
 
 $ pstree -s resqued
-─┬─ 25012 git resqued-0.7.9 master [gen 413] [1 running] config/resqued/github-environment.rb config/resqued/github-lowworker.rb
- └─┬─ 21924 git resqued-0.7.9 listener 413 [f48cb15] [running] config/resqued/github-environment.rb config/resqued/github-lowworker.rb
-   ├─── 22329 git resque-1.20.0: [f48cb15] Waiting for low,notifications,services,page,spam
-   ├─── 22295 git resque-1.20.0: [f48cb15] Processing notifications since 1389929817: GitHub::Jobs::DeliverNotifications
+─┬─ 25012 resqued-0.7.9 master [gen 413] [1 running] config/resqued.rb
+ └─┬─ 21924 resqued-0.7.9 listener 413 [f48cb15] [running] config/resqued.rb
+   ├─── 22329 resque-1.20.0: [f48cb15] Waiting for low,notifications,services
+   ├─── 22295 resque-1.20.0: [f48cb15] Processing notifications since 1389929817: GitHub::Jobs::DeliverNotifications
 ```
 
 Linux never gained a specialized syscall, but still supports custom `/proc/pid/cmdline` via [one weird trick](https://github.com/torvalds/linux/blob/f5835372ebedf26847c2b9e193284075cc9c1f7f/fs/proc/base.c#L220-L222). The hack relies on the fact that [`execve(2)`](http://man7.org/linux/man-pages/man2/execve.2.html) allocates a contiguous piece of memory to pass `argv` and `envp` into a new process. When the null byte separating the two values is overwritten, the kernel assumes you've customized your cmdline and continues to read into the envp buffer. This means your procline can grow to contain more information as long as there's space in the envp buffer. (Environment variables are copied out of the original envp buffer, so overwriting this area of memory only affects `/proc/pid/environ`).
