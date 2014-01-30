@@ -8,7 +8,7 @@ layout: default
 
   <ul class="related-posts">
     {% for post in site.posts %}
-    {% if post.draft != false and post.title contains 'Ruby 2.1' %}
+    {% if post.draft != true and post.title contains 'Ruby 2.1' %}
       <li>
         <h3>
           <a href="{{ post.url }}">
