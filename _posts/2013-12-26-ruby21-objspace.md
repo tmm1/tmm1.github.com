@@ -11,6 +11,7 @@ Since 1.9 ruby has included `objspace.so` which adds even more methods to the Ob
 ``` ruby
 ObjectSpace.each_object{ |o| ... }
 ObjectSpace.count_objects #=> {:TOTAL=>55298, :FREE=>10289, :T_OBJECT=>3371, ...}
+ObjectSpace.each_object.inject(Hash.new 0){ |h,o| h[o.class]+=1; h } #=> {Class=>416, ...}
 
 require 'objspace'
 ObjectSpace.memsize_of(o) #=> 0 /* additional bytes allocated by object */
